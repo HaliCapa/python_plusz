@@ -98,19 +98,5 @@ Forrás: Rohan Rao (Vopani): *Formula 1 World Championship (1950–2024)*, Kaggl
 | A cmd "lefagyni" látszik (Windows) | Ha belekattintottál az ablakba, a Windows megállítja a futást. Nyomj egy Entert vagy Esc-et. |
 | Nem nyílik meg böngésző | Nyisd meg kézzel az `output` mappában lévő HTML fájlokat. |
 
-## Korlátok
-
-- Az adatbázis **nem tartalmaz időjárási adatot**, ezért az "esős pályán" jellegű kérdések nem vizsgálhatók vele.
-- A hazai pilóta megállapítása a pilóta nemzetisége és a pálya országa alapján történik. A `NAT_TO_COUNTRY` szótárban nem szereplő nemzetiségek kimaradnak a hazai elemzésből, a szótár a script elején bővíthető.
-- A kiesések okainak (baleset vs. műszaki hiba) besorolása a `status` oszlop szövegének kulcsszavas keresésén alapul, ezért közelítés.
-
-## A projekt felépítése
-
-```
-.
-├── f1_elemzes.py   # az elemző script
-├── README.md
-└── data/           # Forma-1 adatok (CSV)
-```
 
 Futtatás után egy `output` mappa is megjelenik a generált grafikonokkal.
