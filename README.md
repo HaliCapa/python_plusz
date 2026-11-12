@@ -2,6 +2,20 @@
 
 Python beadandó: a Forma-1 világbajnokság teljes történetét (1950–2024) elemzi öt összetett kérdés mentén, **numpy**, **pandas** és **plotly** segítségével. A script az eredményeket kiírja a terminálba, a grafikonokat pedig megnyitja a böngészőben.
 
+## Gyors kipróbálás
+
+```bash
+git clone https://github.com/FELHASZNALONEV/REPO-NEVE.git
+cd REPO-NEVE
+pip install numpy pandas plotly
+python f1_elemzes.py
+```
+
+Ha a pip nem működik, próbáld meg így: python -m pip install numpy pandas plotly.
+
+Nincs git a gépeden? Kattints a repó oldalán a zöld **Code** gombra, majd a **Download ZIP** opcióra, csomagold ki, és lépj be a kicsomagolt mappába. A további lépések ugyanazok.
+
+macOS-en és Linuxon `python` helyett `python3`, `pip` helyett `pip3` kell.
 
 ## Mit csinál a script?
 
@@ -74,17 +88,6 @@ A repóban benne van a `data` mappa a Forma-1 adatbázis CSV fájljaival, ezért
 Ha a `data` mappa hiányzik vagy üres, töltsd le az adatbázist a [Kaggle-ről](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) (ingyenes fiók kell hozzá), és csomagold ki a CSV fájlokat a `data` mappába.
 
 Forrás: Rohan Rao (Vopani): *Formula 1 World Championship (1950–2024)*, Kaggle. Az adatok az Ergast adatbázisból származnak. A felhasználási feltételeket az eredeti Kaggle oldalon találod.
-
-## Gyakori hibák
-
-| Hiba | Megoldás |
-|---|---|
-| `git` nem található | Használd a **Download ZIP** opciót a repó oldalán. |
-| `python` nem található (macOS/Linux) | Használd a `python3` parancsot. |
-| `FileNotFoundError: data/races.csv` | Nem a projekt mappájából indítottad a scriptet, vagy a CSV-k nincsenek a `data` mappában. |
-| `ModuleNotFoundError: No module named 'plotly'` | A csomag nem abba a Pythonba települt, amivel futtatod. Használd a `python -m pip install numpy pandas plotly` parancsot. |
-| A cmd "lefagyni" látszik (Windows) | Ha belekattintottál az ablakba, a Windows megállítja a futást. Nyomj egy Entert vagy Esc-et. |
-| Nem nyílik meg böngésző | Nyisd meg kézzel az `output` mappában lévő HTML fájlokat. |
 
 
 Futtatás után egy `output` mappa is megjelenik a generált grafikonokkal.
