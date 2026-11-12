@@ -2,18 +2,6 @@
 
 Python beadandó: a Forma-1 világbajnokság teljes történetét (1950–2024) elemzi öt összetett kérdés mentén, **numpy**, **pandas** és **plotly** segítségével. A script az eredményeket kiírja a terminálba, a grafikonokat pedig megnyitja a böngészőben.
 
-## Gyors kipróbálás
-
-```bash
-git clone https://github.com/FELHASZNALONEV/REPO-NEVE.git
-cd REPO-NEVE
-pip install numpy pandas plotly
-python f1_elemzes.py
-```
-
-Nincs git a gépeden? Kattints a repó oldalán a zöld **Code** gombra, majd a **Download ZIP** opcióra, csomagold ki, és lépj be a kicsomagolt mappába. A további lépések ugyanazok.
-
-macOS-en és Linuxon `python` helyett `python3`, `pip` helyett `pip3` kell.
 
 ## Mit csinál a script?
 
