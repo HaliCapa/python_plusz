@@ -22,7 +22,7 @@ OUT.mkdir(exist_ok=True)
 # 1. Adatok betöltése és egyesítése
 # ----------------------------------------------------------------------
 def load(name: str) -> pd.DataFrame:
-    # a Kaggle fájlokban a hiányzó érték "\N"
+   
     return pd.read_csv(DATA / f"{name}.csv", na_values=["\\N"])
 
 
@@ -61,7 +61,6 @@ def header(text: str) -> None:
 # 1. KÉRDÉS - Hazai pálya előnye
 # Mennyivel nagyobb a győzelmi esély, ha a pilóta hazai pályán indul?
 # Az összes győzelem hányad része hazai győzelem, és kik nyertek így a legtöbbet?
-# (Időjárás nincs az adatbázisban, ezért az "eső" szűrő kimarad.)
 # ----------------------------------------------------------------------
 NAT_TO_COUNTRY = {
     "British": "UK", "German": "Germany", "Italian": "Italy", "French": "France",
@@ -82,7 +81,7 @@ def q1_hazai_elony() -> None:
     d["home_country"] = d["nationality"].map(NAT_TO_COUNTRY)
     d["is_home"] = d["home_country"] == d["country"]
 
-    # csak olyan pilóták, akik legalább egyszer indultak hazai pályán (fair összehasonlítás)
+    
     had_home = d[d["is_home"]]["driver"].unique()
     e = d[d["driver"].isin(had_home)]
 
@@ -96,7 +95,7 @@ def q1_hazai_elony() -> None:
     summary["dobogos_arany_%"] = summary["dobogok"] / summary["rajtok"] * 100
     print(summary.round(2).rename(index={True: "hazai", False: "idegen"}))
 
-    # kétmintás arány-próba numpy-val (z-teszt)
+   
     n1, w1 = summary.loc[True, ["rajtok", "gyozelmek"]]
     n2, w2 = summary.loc[False, ["rajtok", "gyozelmek"]]
     p1, p2, p = w1 / n1, w2 / n2, (w1 + w2) / (n1 + n2)
@@ -126,7 +125,7 @@ def q1_hazai_elony() -> None:
 # ----------------------------------------------------------------------
 def q2_rajtpozicio() -> None:
     header("2. KÉRDÉS: Rajtpozíció és fordítások")
-    g = df[df["grid"] > 0].copy()          # grid == 0: boxutcából rajtolt
+    g = df[df["grid"] > 0].copy()          
 
     by_grid = g[g["grid"] <= 20].groupby("grid")["win"].mean().mul(100)
     print("Győzelmi esély rajtpozíció szerint (első 5):")
